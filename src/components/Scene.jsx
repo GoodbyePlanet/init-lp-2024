@@ -9,6 +9,7 @@ import { BLUE_BLOOM_COLOR, REDDISH_BLOOM_COLOR, WHITE_BLOOM_COLOR, YELLOW_BLOOM_
 import { currentPageAtom, isSceneLoaded, PAGES } from '../atoms.js';
 import { gsap } from 'gsap';
 import dawn from '../assets/dawn.exr.js';
+import Sound from './Sound.jsx';
 
 const whiteBloomColor = new Color(WHITE_BLOOM_COLOR);
 whiteBloomColor.multiplyScalar(5);
@@ -113,6 +114,7 @@ const Scene = () => {
   return (
     <>
       <CameraControls makeDefault ref={controls} maxPolarAngle={1.6} minDistance={5} maxDistance={20} />
+      <Sound currentPage={currentPage} />
       {/*Mesh bellow is here to allow resize responsiveness*/}
       <mesh ref={fitScreenCamera} position-z={0.9} visible={false}>
         <boxGeometry args={[9, 2, 2]} />
