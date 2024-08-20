@@ -14,7 +14,6 @@
     "@react-three/drei": "9.75.0",
     "@react-three/fiber": "8.13.3",
     "@react-three/postprocessing": "^2.16.0",
-    "@types/three": "0.152.1",
     "gsap": "^3.12.5",
     "jotai": "^2.7.0",
     "prettier-plugin-tailwindcss": "^0.5.14",
