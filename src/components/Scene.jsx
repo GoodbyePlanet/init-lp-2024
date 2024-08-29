@@ -2,6 +2,7 @@ import { memo, Suspense, useEffect, useRef } from 'react';
 import { CameraControls, Environment, Text, useFont } from '@react-three/drei';
 import { useAtom } from 'jotai';
 import { Color, MathUtils } from 'three';
+// import { Color, MathUtils, TEST_EXPORT  } from 'three';
 import Horse from './Model.jsx';
 import Ground from './Ground.jsx';
 import ProgressBar from './ProgressBar.jsx';
@@ -111,6 +112,7 @@ const Scene = () => {
     }
   };
 
+	// console.log("TEST, ", TEST_EXPORT)
   return (
     <>
       <CameraControls makeDefault ref={controls} maxPolarAngle={1.6} minDistance={5} maxDistance={20} />
