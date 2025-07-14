@@ -1,8 +1,8 @@
-# INIT 2024 Landing Page
+# INIT 2025 Landing Page
 
-An idea for INIT conference 2024 Landing Page
+An idea for INIT conference 2025 Landing Page
 
-Application Link https://init-lp-2024.vercel.app/
+Application Link https://init-lp-2025.vercel.app/
 
 ### Currently only supports desktop views.
 
