@@ -1,12 +1,5 @@
 import { useAtom } from 'jotai';
 import { currentPageAtom, isSceneLoadedAtom, isSoundEnabled, PAGES } from '../atoms.js';
-import Button from './Button.jsx';
-import SocialMedia from './SocialMedia.jsx';
-import Conference from './Conference.jsx';
-import Contact from './Contact.jsx';
-import Speakers from './Speakers.jsx';
-import Gears from './Gears.jsx';
-import SoundIcon from './SoundIcon.jsx';
 
 export const UI = () => {
   const [currentPage, _] = useAtom(currentPageAtom);
@@ -19,7 +12,6 @@ export const UI = () => {
     currentPage === PAGES.CONTACT ||
     currentPage === PAGES.SPEAKERS;
   const isOnPage = (page) => currentPage === page;
-  const shouldShowHomeButton = isOnPage(PAGES.CONFERENCE) || isOnPage(PAGES.CONTACT) || isOnPage(PAGES.SPEAKERS);
 
   const handleSoundEnable = () => setIsSoundEnabled(!soundEnabled);
 
@@ -30,29 +22,12 @@ export const UI = () => {
       >
         <div className="h-[88%]"></div>
         {sceneLoaded && (
-          <div className="appears-content">
-            {isOnPage(PAGES.HOME) && (
-              <div className="flex gap-2">
-                <Button page={PAGES.CONFERENCE} />
-                <Button page={PAGES.SPEAKERS} />
-                <Button page={PAGES.CONTACT} />
-              </div>
-            )}
-            <div className="fixed bottom-7 right-4 flex flex-col gap-4">
-              <SocialMedia />
-            </div>
-            <div className="pointer-events-auto fixed bottom-7 left-9 w-12 cursor-pointer hover:accent-yellow-400">
-              <Gears />
-            </div>
-            <div className="pointer-events-auto fixed bottom-7 left-24 w-12 cursor-pointer hover:accent-yellow-400">
-              <SoundIcon onSoundIconClick={handleSoundEnable} />
-            </div>
+          <div className="flex w-full justify-end">
+            <h5 className="italic mr-4 mt-20 text-white drop-shadow-[0_0_10px_#0ff] drop-shadow-[0_0_20px_#0ff] drop-shadow-[0_0_5px_#0ff]">
+              https://github.com/GoodbyePlanet
+            </h5>
           </div>
         )}
-        {shouldShowHomeButton && <Button page={PAGES.HOME} />}
-        {isOnPage(PAGES.CONFERENCE) && <Conference />}
-        {isOnPage(PAGES.CONTACT) && <Contact />}
-        {isOnPage(PAGES.SPEAKERS) && <Speakers />}
       </section>
     </div>
   );
